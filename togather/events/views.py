@@ -1,6 +1,6 @@
-from django.shortcuts import render
+# from django.shortcuts import render     # Clarence's adjustment starts here
+from django.http import HttpResponse
 
-# Create your views here.
 from .models import Event, User_special
 from .serializers import EventSerializer, UserSerializer
 from rest_framework import viewsets
@@ -8,6 +8,9 @@ from rest_framework import permissions
 from django.contrib.auth.models import User
 
 
+# Create your views here.
+def index(request):
+    return HttpResponse("API View")
 
 
 class EventViewSet(viewsets.ModelViewSet):
